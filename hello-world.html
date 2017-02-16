@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Linux Shell Command Resource</title>
+	<meta charset="utf-8" />
+	<br style="margin-bottom:30px;" />
+
+<script src="https://cdn.jsdelivr.net/clipboard.js/1.6.0/clipboard.min.js"></script>
+ <script>
+    var clipboard = new Clipboard('.btn');
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+    </script>
+	<style>
+		a:hover {
+			color: pink;
+		}
+		
+		a:visited {
+			color: brown;
+		}
+		
+		h1:first-of-type {
+			font-size: 1.25em;
+		}
+		
+		h2:nth-child(1) {
+			background: blue;
+		}
+		h2:inline
+		{
+			display:inline;
+		}
+		
+		body {
+			background-image: url("congaparrot.gif");
+			background-color: "#e9e9e9";
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		
+		#Title {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: large;
+			font-weight: 600;
+			background-color: #CDCDCD;
+			border-radius: 4px;
+			padding: 10px;
+			text-align: center;
+		}
+		
+		.heading {
+			font-family: Arial, Helvetica, sans-serif;
+			vertical-align:text-top;
+			text-align: center;
+		}
+		
+		.commandentry {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: average;
+			background-color: #88BBD6;
+			border-radius: 4px;
+			padding: 10px;
+			text-align: left;
+		}
+		
+		.commandexample {
+			font-family: "Courier New", Courier, monospace;
+			font-size: average;
+			background-color: #CDCDCD;
+			border-radius: 4px;
+			padding: 10px;
+			text-align: left;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<div id="Title">
+		<h1>CS2610 Basic Linux Shell commands</h1>
+	</div>
+	<!--is there a better way to center the text below, short of making a new id?-->
+	<div class="heading">
+		<h2> file meta data commands</h2>
+	</div>
+	<!--the ls command-->
+	<div class="commandentry">
+		<h3>ls: directory display</h3>
+		<p> the "ls" command allows you to display the current directory's contents in the terminal</p>
+		<button class="btn" data-clipboard-text="cd rm -r ./bin ">
+    	Copy command to clipboard!
+		</button>
+		<p>example:</p>
+		<div class="commandexample">
+			<p>username:directorylocation $<span style="color:blue"> ls -l</span></p>
+			<p>total 8</p>
+			<p>-rw-rw-r-- 1 ubuntu ubuntu 907 Nov 1 05:45 README.md</p>
+			<p>-rw-rw-r-- 1 ubuntu ubuntu 1354 Jan 24 16:09 hello-world.html</p>
+		</div>
+	</div>
+	<br>
+	<!-- the tree command-->
+	<div class="commandentry">
+		<h3>tree: display of files in a visual format</h3>
+		<p>the "tree" command dispays the active directory in</p>
+			<button class="btn" data-clipboard-text="cd rm -r ./bin ">
+    	Copy command to clipboard!
+		</button>
+		<p>example:</p>
+		<div class="commandexample">
+			<p>Username:~/directory $ <span style="color:blue">tree</span></p>
+			<p>├── README.md</p>
+			<p>├── examplefile.txt</p>
+			<p>├── folder1</p>
+			<p>├── hello-world.html</p>
+			<p>└── newfile.txt</p>
+			<p> 1 directory, 4 files</p>
+		</div>
+	</div>
+	<br>
+	<!-- the file command-->
+	<div class="commandentry">
+		<h3>File: denotion of file information</h3>
+		<p>the "file" command denotes any information about the specific file</p>
+		<p>example:</p>
+		<div class="commandexample">
+			<p> username:~/directorylocation $<span style="color:blue"> file newfile.txt</span></p>
+			<p>newfile.txt: empty </p>
+		</div>
+	</div>
+	<br>
+	<div class="heading">
+		<h2> Basic Help Commands</h2>
+	</div>
+	<!-- the type command-->
+	<div class="commandentry">
+		<h3>Type: notation of file type</h3>
+		<p>the "Type" command denotes the specific files type</p>
+			<button class="btn" data-clipboard-text="cd rm -r ./bin ">
+    	Copy command to clipboard!
+		</button>
+		<p>example:</p>
+		<div class="commandexample">
+			<p>username:~/directorylocation $<span style="color:blue"> type ls</span></p>
+			<p>ls is aliased to `ls --color=auto -F'</p>
+		</div>
+	</div>
+	<br>
+	<!--the cd command-->
+	<div class="commandentry">
+		<h3>cd: basic directory accessing and movement through the file system</h3>
+		<p> the "cd" command allows you move throughout the file system fo your computer</p>
+			<button class="btn" data-clipboard-text="cd rm -r ./bin ">
+    	Copy command to clipboard!
+		</button>
+		<div class="commandexample">
+			<p>username:directorylocation $ ls -l </p>
+			<p>-rw-rw-r-- 1 ubuntu ubuntu 907 Nov 1 05:45 README.md</p>
+			<p>drwxr-xr-x 2 ubuntu ubuntu 4096 Jan 24 16:19 folder1/</p>
+			<p>-rw-rw-r-- 1 ubuntu ubuntu 1354 Jan 24 16:09 hello-world.html</p>
+			<p>username:directorylocation $ <span style="color:blue">cd folder1</span></p>
+			<p>username:directorylocation/folder1 $ </p>
+		</div>
+	</div>
+	<div class="heading">
+		<h2>Creation, Copying, and Deletion</h2>
+	</div>
+	<!-- the mkdir command-->
+	<div class="commandentry">
+		<h3>mkdir: creation of a new directory</h3>
+		<p>the mkdir command creates a new directory or folder in the active directory location</p>
+			<button class="btn" data-clipboard-text="cd rm -r ./bin ">
+    	Copy command to clipboard!
+		</button>
+		<div class=commandexample>
+			<p>username:directorylocation $ ls -l</p>
+			<p>total 8</p>
+			<p>-rw-rw-r-- 1 ubuntu ubuntu 907 Nov 1 05:45 README.md</p>
+			<p>-rw-rw-r-- 1 ubuntu ubuntu 1354 Jan 24 16:09 hello-world.html</p>
+			<p>username:directorylocation $ <span style="color:blue"> mkdir folder1 </span></p>
+			<p>username:directorylocation $ ls -l </p>
+			<p>-rw-rw-r-- 1 ubuntu ubuntu 907 Nov 1 05:45 README.md</p>
+			<p>drwxr-xr-x 2 ubuntu ubuntu 4096 Jan 24 16:19 folder1/</p>
+			<p>-rw-rw-r-- 1 ubuntu ubuntu 1354 Jan 24 16:09 hello-world.html</p>
+		</div>
+	</div>
+	<br>
+	<!-- the cp command-->
+	<div class="commandentry">
+		<h3>cp: copying a file</h3>
+		<p>the cp command copys the denoted file or directory</p>
+			<button class="btn" data-clipboard-text="cd rm -r ./bin ">
+    	Copy command to clipboard!
+		</button>
+		<div class=commandexample>
+			<p> Username:~/directorylocation $ ls -l</p>
+			<p>total 12</p>
+			<p>-rw-rw-r-- 1 ubuntu ubuntu 907 Nov 1 05:45 README.md</p>
+			<p>-rw-r--r-- 1 ubuntu ubuntu 0 Jan 25 21:56 examplefile.txt</p>
+			<p>drwxr-xr-x 2 ubuntu ubuntu 4096 Jan 24 16:48 folder1/</p>
+			<p>-rw-rw-r-- 1 ubuntu ubuntu 3564 Jan 25 19:18 hello-world.html</p>
+			<p>Username:~/directorylocation $ <span style="color:blue">cp examplefile.txt newfile.txt</span></p>
+			<p>overheater:~/workspace $ ls -l</p>
+			<p>total 12</p>
+			<p>-rw-rw-r-- 1 ubuntu ubuntu 907 Nov 1 05:45 README.md</p>
+			<p>-rw-r--r-- 1 ubuntu ubuntu 0 Jan 25 21:56 examplefile.txt</p>
+			<p>drwxr-xr-x 2 ubuntu ubuntu 4096 Jan 24 16:48 folder1/</p>
+			<p>-rw-rw-r-- 1 ubuntu ubuntu 4013 Jan 25 22:04 hello-world.html</p>
+			<p>-rw-r--r-- 1 ubuntu ubuntu 0 Jan 25 21:57 newfile.txt</p>
+		</div>
+	</div>
+	<br>
+	<!-- the rm command-->
+	<div class="commandentry">
+		<h3>rm: removal of files</h3>
+		<p>the rm command deletes the denoted file</p>
+			<button class="btn" data-clipboard-text="cd rm -r ./bin ">
+    	Copy command to clipboard!
+		</button>
+		<p>example:</p>
+		<div class="commandexample">
+			<p>username:~/workspace $ ls -l</p>
+			<p>total 16</p>
+			<p>-rw-rw-r-- 1 ubuntu ubuntu 907 Nov 1 05:45 README.md</p>
+			<p>-rw-r--r-- 1 ubuntu ubuntu 0 Jan 25 21:56 examplefile.txt</p>
+			<p>drwxr-xr-x 2 ubuntu ubuntu 4096 Jan 24 16:48 folder1/</p>
+			<p>-rw-rw-r-- 1 ubuntu ubuntu 5755 Jan 27 18:35 hello-world.html</p>
+			<p>-rw-r--r-- 1 ubuntu ubuntu 0 Jan 25 21:57 newfile.txt</p>
+			<p>username:~/directorylocation $<span style="color:blue"> rm newfile.txt</span></p>
+			<p>username:~/directorylocation $ ls -l</p>
+			<p>total 16</p>
+			<p>-rw-rw-r-- 1 ubuntu ubuntu 907 Nov 1 05:45 README.md</p>
+			<p>-rw-r--r-- 1 ubuntu ubuntu 0 Jan 25 21:56 examplefile.txt</p>
+			<p>drwxr-xr-x 2 ubuntu ubuntu 4096 Jan 24 16:48 folder1/</p>
+			<p>-rw-rw-r-- 1 ubuntu ubuntu 5755 Jan 27 18:35 hello-world.html</p>
+		</div>
+	</div>
+	<div class="heading">
+		<h2>Other garbage for the assignment</h2>
+	</div>
+	<div class="commandentry">
+		<a href="http://www.zombo.com/">
+	You'll Always get a warm welcome here
+	</a>
+		<br>
+		<img src="jordan-11-space-jam-december-2016.jpg" alt="a different space jam that aged a bit better" style="width:248px;height:174px;">
+		<br>
+		<table style="width=100%">
+			<tr>
+				<th>my</th>
+				<th>table</th>
+				<th>example</th>
+			</tr>
+			<tr>
+				<td>this</td>
+				<td>is</td>
+				<td>my</td>
+			</tr>
+			<tr>
+				<td>borderless</td>
+				<td>example</td>
+				<td>table</td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>
